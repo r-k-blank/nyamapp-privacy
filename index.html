@@ -17,55 +17,79 @@
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="date">Last updated: March 29, 2026</p>
+  <p class="date">Last updated: October 5, 2026</p>
 
-  <p>Nyam! ("we", "our", or "the app") is committed to protecting your privacy. This policy explains what data we collect, how we use it, and your rights.</p>
+  <p>Nyam! is operated by Rusu Catalin ("we", "our", or "the app") and helps users manage food inventory, discover recipes, create shopping lists, and optionally generate meal plans. This policy describes the information processed by the app, why it is used, where it is stored, and the choices available to you.</p>
 
-  <h2>1. Data We Collect</h2>
+  <h2>1. Information We Process</h2>
   <ul>
-    <li><strong>Account information:</strong> Email address and password (encrypted) when you create an account.</li>
-    <li><strong>Inventory data:</strong> Ingredients you add to your virtual fridge, including names, quantities, and expiry dates.</li>
-    <li><strong>Preferences:</strong> Dietary preferences, allergies, cooking skill level, language setting, and notification preferences.</li>
-    <li><strong>Recipe interactions:</strong> Favorites, reviews, notes, and cooking session history.</li>
-    <li><strong>Shopping lists:</strong> Items you add to your shopping list.</li>
-    <li><strong>Photos:</strong> Images you upload for your profile or recipes, stored securely.</li>
-    <li><strong>Crash reports:</strong> Anonymous error logs and device information to help us fix bugs (via Sentry).</li>
+    <li><strong>Account data:</strong> Email address, display name, account identifier, avatar, and authentication events. Passwords are handled and hashed by Supabase Auth; Nyam! does not store readable passwords.</li>
+    <li><strong>Food inventory:</strong> Ingredient names, quantities, units, storage locations, expiry dates, and always-available status.</li>
+    <li><strong>Food preferences:</strong> Dietary style, allergies, cooking level, language, notification preferences, and digestive-sensitivity preference.</li>
+    <li><strong>Optional physical and nutrition profile:</strong> Date of birth, weight, height, sex selection, activity level, fitness goal, and body-type selection. These fields are used only when you choose meal planning.</li>
+    <li><strong>App content and activity:</strong> Meal plans, cooked-meal status, favorites, personal recipes, recipe notes, reviews, shopping lists, kitchen tools, and active cooking-session progress.</li>
+    <li><strong>User uploads:</strong> Profile, recipe, and kitchen-tool images. Uploaded images and public text may be reviewed for safety and moderation.</li>
+    <li><strong>Technical diagnostics:</strong> App version, device/platform information, performance measurements, error categories, and crash details when Sentry is enabled. We configure error events to remove the Sentry user object, but diagnostic data may still contain technical request context.</li>
+    <li><strong>Optional product analytics:</strong> Your analytics-consent choice and anonymous daily totals for a fixed set of actions, grouped only by app language and platform. These totals do not contain your account ID, email, ingredient names, allergies, weight, search terms, or other free text.</li>
   </ul>
 
-  <h2>2. How We Use Your Data</h2>
+  <h2>2. How We Use Information</h2>
   <ul>
-    <li>To provide and personalize recipe recommendations based on your ingredients.</li>
-    <li>To save your inventory, preferences, and cooking history across devices.</li>
-    <li>To improve app stability through anonymous crash reporting.</li>
-    <li>We do <strong>not</strong> sell your data to third parties.</li>
-    <li>We do <strong>not</strong> use your data for advertising.</li>
+    <li>Provide account synchronization and restore your data across devices.</li>
+    <li>Match recipes to your inventory, preferences, allergies, and tools.</li>
+    <li>Create optional calorie and macronutrient estimates and meal plans.</li>
+    <li>Operate shopping lists, cooking sessions, reviews, moderation, security controls, and account deletion.</li>
+    <li>Schedule optional expiry reminders locally on your device. Ingredient names and expiry dates used for these reminders are not sent to a separate push-notification provider.</li>
+    <li>When you explicitly enable anonymous analytics, understand which core features are used through aggregate daily counters. Raw analytics events and per-user analytics histories are not stored.</li>
+    <li>Diagnose failures, prevent abuse, and improve reliability.</li>
+    <li>Comply with legal obligations and enforce product safety rules.</li>
+  </ul>
+  <p>We do <strong>not</strong> sell personal information and currently do <strong>not</strong> use personal information for third-party advertising.</p>
+
+  <h2>3. Nutrition and Health Notice</h2>
+  <p>Nyam! is a general wellness and meal-planning product, not a medical service. Calorie, nutrient, allergen, expiry, and meal-plan information is approximate and may be incomplete or incorrect. It is not intended to diagnose, treat, cure, or prevent any condition. Always verify product labels and consult a qualified doctor or dietitian for allergies, medical conditions, pregnancy, eating disorders, medication interactions, or other clinical needs. Calorie-based plans are currently restricted to users aged 18 or older.</p>
+
+  <h2>4. Storage, Retention, and Deletion</h2>
+  <p>Account data is stored using <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>. Row Level Security is used to restrict private records to their owner. Limited public profile-card fields—display name and approved avatar—may be shown with public reviews.</p>
+  <p>The app keeps user-scoped offline copies of inventory and active cooking-session progress on the device. These copies are separated by account and removed when that account signs out. Device backups or operating-system behavior may affect deletion timing outside the app's control.</p>
+  <p>If you enable expiry reminders, the app asks the operating system for notification permission and stores scheduled reminders on the device. You can disable them in the app or in system settings.</p>
+  <p>Anonymous product analytics is disabled by default. If you enable it, Supabase stores only aggregate daily counters. You can disable it again from Profile &gt; Settings; subsequent actions will no longer contribute to those counters.</p>
+  <p>If you create or join a Household, its members can see and change the shared inventory and shopping list. Members can also see each other's display name and approved avatar inside that Household. Email addresses, physical profile data, allergies, private recipe notes, and account identifiers are not shared through the Household screen. Invitation codes expire after seven days and are stored by the service only as cryptographic hashes.</p>
+  <p>Leaving a Household removes your access to its shared data. Items you previously contributed remain available to the remaining Household member. Deleting the Household stops sharing and returns contributed rows to their original account scope.</p>
+  <p>Deleting an account starts a 72-hour grace period during which deletion may be cancelled. After the grace period, the account and associated application records are scheduled for permanent deletion. Security and operational logs may remain for a limited period where required for fraud prevention, legal compliance, or service integrity.</p>
+
+  <h2>5. Public Content and Moderation</h2>
+  <p>Reviews and public recipes may be visible to other authenticated users together with your display name and approved avatar. Private recipe notes, physical profile data, allergies, and email are not intended to be public. Inventory and shopping lists remain private unless you intentionally join a Household, in which case they are visible only to its members. Automated rules and administrators may review reported or pending text and images.</p>
+
+  <h2>6. Service Providers</h2>
+  <ul>
+    <li><strong>Supabase:</strong> Authentication, database, storage, and server functions (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">privacy policy</a>).</li>
+    <li><strong>Sentry:</strong> Error and performance monitoring when configured (<a href="https://sentry.io/privacy/" target="_blank" rel="noopener">privacy policy</a>).</li>
+    <li><strong>Google Fonts:</strong> Font delivery where runtime font fetching is used (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy</a>).</li>
+  </ul>
+  <p>These providers may process information in countries other than your own under their contractual and legal safeguards.</p>
+
+  <h2>7. Your Choices and Rights</h2>
+  <ul>
+    <li>Edit your profile, food preferences, inventory, recipes, reviews, and notification preferences in the app.</li>
+    <li>Enable or disable anonymous product analytics at any time from the app settings. It is off by default.</li>
+    <li>Remove individual content or request a copy or correction of your information by contacting us.</li>
+    <li>Start account deletion directly in the app and cancel it during the 72-hour grace period.</li>
+    <li>Contact us regarding access, correction, deletion, restriction, objection, portability, or a privacy complaint. Availability of particular rights depends on applicable law.</li>
   </ul>
 
-  <h2>3. Data Storage</h2>
-  <p>Your data is stored securely on <a href="https://supabase.com" target="_blank">Supabase</a> servers with Row Level Security enabled, ensuring only you can access your own data. Passwords are hashed and never stored in plain text.</p>
+  <h2>8. Security</h2>
+  <p>We use access controls, server-side authorization, transport encryption, upload validation, rate limits, and moderation measures. No system can guarantee absolute security. Protect your password and contact us if you believe your account has been compromised.</p>
 
-  <h2>4. Third-Party Services</h2>
-  <ul>
-    <li><strong>Supabase:</strong> Backend and authentication (<a href="https://supabase.com/privacy" target="_blank">privacy policy</a>).</li>
-    <li><strong>Sentry:</strong> Crash reporting and error tracking (<a href="https://sentry.io/privacy/" target="_blank">privacy policy</a>).</li>
-    <li><strong>Google Fonts:</strong> Typography loaded at runtime (<a href="https://policies.google.com/privacy" target="_blank">privacy policy</a>).</li>
-  </ul>
+  <h2>9. Children's Privacy</h2>
+  <p>Nyam! is not directed to children under 13, and we do not knowingly collect their personal information. Calorie-based meal planning is disabled for users under 18. A parent or guardian who believes a child submitted information should contact us for removal.</p>
 
-  <h2>5. Your Rights</h2>
-  <ul>
-    <li>You can delete your account and all associated data at any time by contacting us at <a href="mailto:nyamapp.contact@gmail.com">nyamapp.contact@gmail.com</a>. We will process your request within 48 hours.</li>
-    <li>You can request a copy of your data by contacting us.</li>
-    <li>You can opt out of crash reporting by contacting us.</li>
-  </ul>
+  <h2>10. Changes to This Policy</h2>
+  <p>We may update this policy as the product changes. We will publish the revised version and update the date above. Material changes should also be communicated in the app or through another appropriate channel.</p>
 
-  <h2>6. Children's Privacy</h2>
-  <p>Nyam! is not directed at children under 13. We do not knowingly collect personal information from children under 13.</p>
-
-  <h2>7. Changes to This Policy</h2>
-  <p>We may update this policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the date above.</p>
-
-  <h2>8. Contact Us</h2>
-  <p>If you have questions about this privacy policy, contact us at:<br>
+  <h2>11. Contact Us</h2>
+  <p>Data controller and app operator: Rusu Catalin, Republic of Moldova.<br>
+  If you have questions about this privacy policy or want to exercise a privacy right, contact us at:<br>
   <a href="mailto:nyamapp.contact@gmail.com">nyamapp.contact@gmail.com</a></p>
 </body>
 </html>
