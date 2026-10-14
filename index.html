@@ -17,7 +17,7 @@
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="date">Last updated: October 5, 2026</p>
+  <p class="date">Last updated: October 14, 2026</p>
 
   <p>Nyam! is operated by Rusu Catalin ("we", "our", or "the app") and helps users manage food inventory, discover recipes, create shopping lists, and optionally generate meal plans. This policy describes the information processed by the app, why it is used, where it is stored, and the choices available to you.</p>
 
@@ -29,6 +29,7 @@
     <li><strong>Optional physical and nutrition profile:</strong> Date of birth, weight, height, sex selection, activity level, fitness goal, and body-type selection. These fields are used only when you choose meal planning.</li>
     <li><strong>App content and activity:</strong> Meal plans, cooked-meal status, favorites, personal recipes, recipe notes, reviews, shopping lists, kitchen tools, and active cooking-session progress.</li>
     <li><strong>User uploads:</strong> Profile, recipe, and kitchen-tool images. Uploaded images and public text may be reviewed for safety and moderation.</li>
+    <li><strong>Camera, receipt, barcode, and voice input:</strong> Camera or selected images are used to scan barcodes and extract receipt text on your device. Voice ingredient entry uses the speech-recognition service provided by your device; depending on your operating-system settings and provider, audio may be processed by that provider. Nyam! receives the recognized text, does not store the audio, and saves ingredient data only after you confirm the suggestions.</li>
     <li><strong>Technical diagnostics:</strong> App version, device/platform information, performance measurements, error categories, and crash details when Sentry is enabled. We configure error events to remove the Sentry user object, but diagnostic data may still contain technical request context.</li>
     <li><strong>Optional product analytics:</strong> Your analytics-consent choice and anonymous daily totals for a fixed set of actions, grouped only by app language and platform. These totals do not contain your account ID, email, ingredient names, allergies, weight, search terms, or other free text.</li>
   </ul>
@@ -51,7 +52,7 @@
 
   <h2>4. Storage, Retention, and Deletion</h2>
   <p>Account data is stored using <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>. Row Level Security is used to restrict private records to their owner. Limited public profile-card fields—display name and approved avatar—may be shown with public reviews.</p>
-  <p>The app keeps user-scoped offline copies of inventory and active cooking-session progress on the device. These copies are separated by account and removed when that account signs out. Device backups or operating-system behavior may affect deletion timing outside the app's control.</p>
+  <p>The app keeps user-scoped offline copies of inventory and active cooking-session progress on the device. These copies are separated by account and removed when that account signs out. Android application backup is disabled to reduce the chance that these local copies are transferred outside the app.</p>
   <p>If you enable expiry reminders, the app asks the operating system for notification permission and stores scheduled reminders on the device. You can disable them in the app or in system settings.</p>
   <p>Anonymous product analytics is disabled by default. If you enable it, Supabase stores only aggregate daily counters. You can disable it again from Profile &gt; Settings; subsequent actions will no longer contribute to those counters.</p>
   <p>If you create or join a Household, its members can see and change the shared inventory and shopping list. Members can also see each other's display name and approved avatar inside that Household. Email addresses, physical profile data, allergies, private recipe notes, and account identifiers are not shared through the Household screen. Invitation codes expire after seven days and are stored by the service only as cryptographic hashes.</p>
@@ -67,7 +68,7 @@
   <ul>
     <li><strong>Supabase:</strong> Authentication, database, storage, and server functions (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">privacy policy</a>).</li>
     <li><strong>Sentry:</strong> Error and performance monitoring when configured (<a href="https://sentry.io/privacy/" target="_blank" rel="noopener">privacy policy</a>).</li>
-    <li><strong>Google Fonts:</strong> Font delivery where runtime font fetching is used (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy</a>).</li>
+    <li><strong>Device speech-recognition provider:</strong> Processes voice input only when you choose voice entry. Processing and retention depend on the provider selected in your device settings.</li>
   </ul>
   <p>These providers may process information in countries other than your own under their contractual and legal safeguards.</p>
 
